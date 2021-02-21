@@ -112,29 +112,31 @@ const businesses = [
   }
 ];
 
-// const printToDom = (divId, textToPrint) => {
-//   const selectedDiv = document.querySelector(divId);
-//   selectedDiv.innerHTML = textToPrint;
-// };
-
 const outEl = document.querySelector('#output');
 outEl.innerHTML ='<h2>Active Businesses</h2>';
 
-const allBusinessAddresses = () => {
-// const domString = '';
 
-businesses.forEach(function(business, i) {
-  let zipCode = business.addressZipCode
-  outEl.innerHTML += `
-  <h2>${business.companyName}</h2>
-  <section>${business.addressFullStreet}</section>
-  <section>${business.addressCity}, 
-    ${business['addressStateCode']} ${[zipCode]}
-    <section>
-  `
-  outEl.innerHTML += "<hr/>"
+
+// const allBusinessAddresses = () => {
+
+// businesses.forEach(function(business, i) {
+//   let zipCode = business.addressZipCode
+//   outEl.innerHTML += `
+//   <h2>${business.companyName}</h2>
+//   <section>${business.addressFullStreet}</section>
+//   <section>${business.addressCity}, 
+//     ${business['addressStateCode']} ${[zipCode]}
+//     <section>
+//   `
+//   outEl.innerHTML += "<hr/>"
+// });
+
+// };
+// allBusinessAddresses();
+
+
+const newYorkBusinesses = businesses.filter(business => {
+  return business.addressStateCode === 'NY'
+  
 });
-// printToDom('#output', domString);
-};
-
-allBusinessAddresses();
+console.log(newYorkBusinesses);
