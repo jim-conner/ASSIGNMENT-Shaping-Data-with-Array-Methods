@@ -112,6 +112,7 @@ const businesses = [
 ];
 
 const outEl = document.querySelector("#output");
+
 outEl.innerHTML = "<h2>Businesses with orders less than $9,000</h2>";
 
 // function biggerElements(val)
@@ -126,3 +127,40 @@ const bigSpenders = businesses.filter(business => {
 });
 
 console.log(bigSpenders);
+
+// outEl.innerHTML ='<h2>Active Businesses</h2>';
+outEl.innerHTML += "<h1>Purchasing Agents</h1>";
+
+const getAgents = () => {
+  const agents = businesses.map((business) => {
+    return business.purchasingAgent;
+  });
+  agents.forEach((agent) => {
+    outEl.innerHTML += 
+      `<h3>${agent.nameFirst} ${agent.nameLast}</h3>`;
+  });
+    outEl.innerHTML += "<hr/>";
+};
+
+getAgents();
+// getAgents();
+// const allBusinessAddresses = () => {
+//   businesses.forEach(function (business, i) {
+//     let zipCode = business.addressZipCode;
+//     outEl.innerHTML += `
+//   <h2>${business.companyName}</h2>
+//   <section>${business.addressFullStreet}</section>
+//   <section>${business.addressCity},
+//     ${business["addressStateCode"]} ${[zipCode]}
+
+//   `;
+//     outEl.innerHTML += "<hr/>";
+//   });
+// };
+// allBusinessAddresses();
+
+// const newYorkBusinesses = businesses.filter(business => {
+//   return business.addressStateCode === 'NY'
+
+// });
+// console.log(newYorkBusinesses);
