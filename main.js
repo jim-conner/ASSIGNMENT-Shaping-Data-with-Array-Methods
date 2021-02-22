@@ -9,7 +9,7 @@ const businesses = [
     addressZipCode: "56839",
     addressStateCode: "WI",
     addressFullStreet: "8417 Franklin Court Tunnel",
-    addressCity: "Mouthcard"
+    addressCity: "Mouthcard",
   },
   {
     purchasingAgent: { nameLast: "Steuber", nameFirst: "Kamron" },
@@ -20,7 +20,7 @@ const businesses = [
     addressZipCode: "09705",
     addressStateCode: "NY",
     addressFullStreet: "2889 Fawn Court Garden",
-    addressCity: "Fellsmere"
+    addressCity: "Fellsmere",
   },
   {
     purchasingAgent: { nameLast: "Gutkowski", nameFirst: "Kaylee" },
@@ -31,7 +31,7 @@ const businesses = [
     addressZipCode: "49376",
     addressStateCode: "ME",
     addressFullStreet: "5734 Maple Avenue Throughway",
-    addressCity: "Little Genesee"
+    addressCity: "Little Genesee",
   },
   {
     purchasingAgent: { nameLast: "Crona", nameFirst: "Lauren" },
@@ -42,7 +42,7 @@ const businesses = [
     addressZipCode: "53326",
     addressStateCode: "IL",
     addressFullStreet: "5755 Hillside Drive Crossroad",
-    addressCity: "Norval"
+    addressCity: "Norval",
   },
   {
     purchasingAgent: { nameLast: "Krajcik", nameFirst: "Elvera" },
@@ -53,7 +53,7 @@ const businesses = [
     addressZipCode: "67071",
     addressStateCode: "KS",
     addressFullStreet: "4826 Arch Street Lights",
-    addressCity: "Newburyport"
+    addressCity: "Newburyport",
   },
   {
     purchasingAgent: { nameLast: "Kling", nameFirst: "Ellie" },
@@ -64,7 +64,7 @@ const businesses = [
     addressZipCode: "98842",
     addressStateCode: "WV",
     addressFullStreet: "9767 Cedar Court Corner",
-    addressCity: "Prince George"
+    addressCity: "Prince George",
   },
   {
     purchasingAgent: { nameLast: "Robel", nameFirst: "Otilia" },
@@ -75,7 +75,7 @@ const businesses = [
     addressZipCode: "72993",
     addressStateCode: "FL",
     addressFullStreet: "9954 Buckingham Drive Mountains",
-    addressCity: "Vesper"
+    addressCity: "Vesper",
   },
   {
     purchasingAgent: { nameLast: "Gusikowski", nameFirst: "Karolann" },
@@ -86,7 +86,7 @@ const businesses = [
     addressZipCode: "59860",
     addressStateCode: "MT",
     addressFullStreet: "4151 Orange Street Extension",
-    addressCity: "Little Rock Air Force Base"
+    addressCity: "Little Rock Air Force Base",
   },
   {
     purchasingAgent: { nameLast: "Hartmann", nameFirst: "Zena" },
@@ -97,7 +97,7 @@ const businesses = [
     addressZipCode: "85156",
     addressStateCode: "NY",
     addressFullStreet: "4765 Fairview Avenue Locks",
-    addressCity: "Dennisville"
+    addressCity: "Dennisville",
   },
   {
     purchasingAgent: { nameLast: "Torphy", nameFirst: "Celia" },
@@ -108,35 +108,44 @@ const businesses = [
     addressZipCode: "96673",
     addressStateCode: "MD",
     addressFullStreet: "7157 Hudson Street Ford",
-    addressCity: "Watrous"
-  }
+    addressCity: "Watrous",
+  },
 ];
 
-const outEl = document.querySelector('#output');
-outEl.innerHTML ='<h2>Active Businesses</h2>';
+const outEl = document.querySelector("#output");
+// outEl.innerHTML ='<h2>Active Businesses</h2>';
+outEl.innerHTML += "<h1>Purchasing Agents</h1>";
 
+const getAgents = () => {
+  const agents = businesses.map((business) => {
+    return business.purchasingAgent;
+  });
+  agents.forEach((agent) => {
+    outEl.innerHTML += 
+      `<h3>${agent.nameFirst} ${agent.nameLast}</h3>`;
+  });
+    outEl.innerHTML += "<hr/>";
+};
 
-
+getAgents();
+// getAgents();
 // const allBusinessAddresses = () => {
-
-// businesses.forEach(function(business, i) {
-//   let zipCode = business.addressZipCode
-//   outEl.innerHTML += `
+//   businesses.forEach(function (business, i) {
+//     let zipCode = business.addressZipCode;
+//     outEl.innerHTML += `
 //   <h2>${business.companyName}</h2>
 //   <section>${business.addressFullStreet}</section>
-//   <section>${business.addressCity}, 
-//     ${business['addressStateCode']} ${[zipCode]}
-//     <section>
-//   `
-//   outEl.innerHTML += "<hr/>"
-// });
+//   <section>${business.addressCity},
+//     ${business["addressStateCode"]} ${[zipCode]}
 
+//   `;
+//     outEl.innerHTML += "<hr/>";
+//   });
 // };
 // allBusinessAddresses();
 
+// const newYorkBusinesses = businesses.filter(business => {
+//   return business.addressStateCode === 'NY'
 
-const newYorkBusinesses = businesses.filter(business => {
-  return business.addressStateCode === 'NY'
-  
-});
-console.log(newYorkBusinesses);
+// });
+// console.log(newYorkBusinesses);
