@@ -1,4 +1,3 @@
-// import businesses from './data.js/businesses';
 const businesses = [
   {
     purchasingAgent: { nameLast: "Kirlin", nameFirst: "Kristy" },
@@ -113,6 +112,22 @@ const businesses = [
 ];
 
 const outEl = document.querySelector("#output");
+
+outEl.innerHTML = "<h2>Businesses with orders less than $9,000</h2>";
+
+// function biggerElements(val)
+//   {
+//     return function(evalue, index, array)
+//     {
+//       return(evalue >= val);
+//     };
+//   };
+const bigSpenders = businesses.filter(business => {
+  return business.orders
+});
+
+console.log(bigSpenders);
+
 // outEl.innerHTML ='<h2>Active Businesses</h2>';
 outEl.innerHTML += "<h1>Purchasing Agents</h1>";
 
